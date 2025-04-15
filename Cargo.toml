@@ -1,0 +1,25 @@
+[package]
+name = "dyn_nwg_tray"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.97"
+futures = "0.3.31"
+mimalloc = "0.1.46"
+native-windows-derive = "1.0.5"
+native-windows-gui = "1.0.13"
+notify = "8.0.0"
+windows = { version = "0.61.1", features = ["Win32_System_Threading", "Win32_UI_WindowsAndMessaging"] }
+winreg = "0.55.0"
+rhai = "1.21.0"
+
+[build-dependencies]
+embed-resource = "3.0.2"
+
+[profile.release]
+strip = true
+opt-level = "z"
+codegen-units = 1
+panic = "abort"
+lto = true

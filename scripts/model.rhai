@@ -1,0 +1,1 @@
+simple_message("info", "this is a test message")
